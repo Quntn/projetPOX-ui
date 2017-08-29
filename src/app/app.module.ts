@@ -8,13 +8,15 @@ import { UploadComponent } from './upload/upload.component';
 import {DataService} from "./data.service";
 import {Http, HttpModule} from "@angular/http";
 import {SelectionService} from "./selection.service";
+import { UtildatabaseComponent } from './utildatabase/utildatabase.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     UtilComponent,
-    UploadComponent
+    UploadComponent,
+    UtildatabaseComponent
   ],
   imports: [
     BrowserModule, HttpModule

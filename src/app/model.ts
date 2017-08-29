@@ -6,4 +6,5 @@ export interface File {
   nom: string;
   extension : string;
   placeholder : string;
+  id : string;
 }

@@ -23,6 +23,7 @@ export class AccueilComponent implements OnInit {
 
   setOnglet (onglet : number) {
     this.selectionService.setOngletSelected(onglet);
+    this.files = this.dataService.getFiles();
   }
 
 
@@ -38,5 +39,9 @@ export class AccueilComponent implements OnInit {
 
   isFileSelected(file : File) : boolean {
     return (file==this.selectionService.getFileSelected())
+}
+
+isOngletSelected ( onglet : number) : boolean {
+    return (onglet == this.selectionService.getOngletSelected())
 }
 }

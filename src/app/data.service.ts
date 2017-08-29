@@ -16,11 +16,11 @@ export class DataService {
 
   getFiles() : Observable <Array<File>> {
     if (this.selectionService.getOngletSelected()==1) {
-      this.headers.append('Access-Control-Allow-Origin', '*');
       return this.http.get(`http://10.31.1.29:8080/poei-1/api/files`,
         {headers : this.headers}).map(res => res.json() as Array<File>);
     } else if (this.selectionService.getOngletSelected()==2) {
-
+      return this.http.get(`http://10.31.1.29:8080/poei-1/api/filesdatabase`,
+        {headers : this.headers}).map(res => res.json() as Array<File>);
     } else if (this.selectionService.getOngletSelected()==3) {
 
     }

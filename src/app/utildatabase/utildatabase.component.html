@@ -1,0 +1,10 @@
+<form method="post" action="http://10.31.1.29:8080/poei-1/renamefiledatabase">
+  <input type="hidden" name="filename" value='{{file.nom}}' />
+  <input type="hidden" name="extension" value='{{file.extension}}' />
+  <input type="hidden" name="id" value='{{file.id}}' />
+  <input type="text" placeholder='{{file.placeholder}}' name="newfilename"/>  {{file.extension}} <br>
+  <button type="submit">RenommerDT</button>
+
+  <button type="submit" formaction="http://10.31.1.29:8080/poei-1/deletefiledatabase">SupprimerDT</button>
+  <div>{{message}}</div>
+</form>

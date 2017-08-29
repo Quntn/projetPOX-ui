@@ -18,7 +18,11 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-
+  <style>
+    button.activeButton {
+      background-color: aliceblue;
+    }
+  </style>
 
 </head>
 <body>
@@ -27,14 +31,20 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <div class="container">
   <h1>Fichiers</h1>
-  <button (click)="setOnglet(2)">Base de données</button>
-  <button (click)="setOnglet(3)">Dropbox</button>
+  <button [class.activeButton]="isOngletSelected(1)" (click)="setOnglet(1)" >Serveur</button>
+  <button [class.activeButton]="isOngletSelected(2)" (click)="setOnglet(2)" >Base de données</button>
+  <button [class.activeButton]="isOngletSelected(3)" (click)="setOnglet(3)" >Dropbox</button>
   <div class="content">
+    <div *ngIf="files==undefined">Aucun fichier stocké</div>
     <ul *ngFor="let file of files | async">
       <li class="file" (click)="onClick(file)">
         {{file.nom}}
       </li>
-      <app-util *ngIf="isFileSelected(file)" [file]="file"></app-util>
+      <ng-container *ngIf="isFileSelected(file)">
+        <app-util *ngIf="isOngletSelected(1)" [file]="file"></app-util>
+        <app-utildatabase *ngIf="isOngletSelected(2)" [file]="file"></app-utildatabase>
+      </ng-container>
+
     </ul>
   </div>
   <app-upload></app-upload>

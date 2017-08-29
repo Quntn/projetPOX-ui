@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="isOngletSelected(1)">
 <form method="post" action="http://10.31.1.29:8080/poei-1/uploadfile"
       enctype="multipart/form-data">
 
@@ -7,4 +7,14 @@
   <input type="submit" value="Upload" />
 
 </form>
+</div>
+<div *ngIf="isOngletSelected(2)">
+  <form method="post" action="http://10.31.1.29:8080/poei-1/uploadfiledatabase"
+        enctype="multipart/form-data">
+
+    <input type="file" name="file" multiple />
+
+    <input type="submit" value="UploadDT" />
+
+  </form>
 </div>

@@ -25,4 +25,6 @@ export class SelectionService {
   getOngletSelected () : number {
     return this.ongletSelected;
   }
+
+
 }
