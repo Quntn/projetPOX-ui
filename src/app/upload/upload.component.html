@@ -18,3 +18,13 @@
 
   </form>
 </div>
+<div *ngIf="isOngletSelected(3)">
+  <form method="post" action="http://10.31.1.29:8080/poei-1/uploadfiledropbox"
+        enctype="multipart/form-data">
+
+    <input type="file" name="file" multiple />
+
+    <input type="submit" value="UploadDP" />
+
+  </form>
+</div>

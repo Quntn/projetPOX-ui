@@ -43,6 +43,7 @@
       <ng-container *ngIf="isFileSelected(file)">
         <app-util *ngIf="isOngletSelected(1)" [file]="file"></app-util>
         <app-utildatabase *ngIf="isOngletSelected(2)" [file]="file"></app-utildatabase>
+        <app-utildropbox *ngIf="isOngletSelected(3)" [file]="file"></app-utildropbox>
       </ng-container>
 
     </ul>

@@ -22,7 +22,8 @@ export class DataService {
       return this.http.get(`http://10.31.1.29:8080/poei-1/api/filesdatabase`,
         {headers : this.headers}).map(res => res.json() as Array<File>);
     } else if (this.selectionService.getOngletSelected()==3) {
-
+      return this.http.get(`http://10.31.1.29:8080/poei-1/api/filesdropbox`,
+        {headers : this.headers}).map(res => res.json() as Array<File>);
     }
 
   }
