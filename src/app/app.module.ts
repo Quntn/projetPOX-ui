@@ -10,6 +10,7 @@ import {Http, HttpModule} from "@angular/http";
 import {SelectionService} from "./selection.service";
 import { UtildatabaseComponent } from './utildatabase/utildatabase.component';
 import { UtildropboxComponent } from './utildropbox/utildropbox.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UtildropboxComponent } from './utildropbox/utildropbox.component';
     UtilComponent,
     UploadComponent,
     UtildatabaseComponent,
-    UtildropboxComponent
+    UtildropboxComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule, HttpModule
